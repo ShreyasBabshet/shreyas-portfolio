@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "../ProjectCard/ProjectCard";
-import back from "../../assets/img/back2.png";
+import back from "../../assets/img/backArrow.png";
 import "./Project.css";
 import colorSharp2 from "../../assets/img/color-sharp2.png";
 import "animate.css";
@@ -97,7 +97,14 @@ export const Projects = () => {
             <div>
               {selectedProject?.details && (
                 <div className="backContainer">
-                  <img className="logo" src={back} alt="" />
+                  <img
+                    className="logo"
+                    src={back}
+                    alt=""
+                    onClick={() => {
+                      setSelectedProject("");
+                    }}
+                  />
                 </div>
               )}
               {selectedProject?.details && (
@@ -106,6 +113,18 @@ export const Projects = () => {
                     <li key={index}>{info}</li>
                   ))}
                 </ol>
+              )}
+              {selectedProject?.stacks && (
+                <div>
+                  <h6>Stacks</h6>
+                  <span>{selectedProject?.stacks}</span>
+                </div>
+              )}
+              {selectedProject?.link && (
+                <p>
+                  Link:{" "}
+                  <a href="selectedProject.link">{selectedProject.link}</a>
+                </p>
               )}
             </div>
           </Col>

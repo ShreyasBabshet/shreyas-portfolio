@@ -523,3 +523,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 1rem;
   cursor: pointer;
 }
+
+.cardBackgroudImg {
+  height: 262px;
+}
